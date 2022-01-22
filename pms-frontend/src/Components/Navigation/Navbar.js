@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const NavigationBar = () => {
   const navbarTitle = "PMS Portal"
   const width = '800px'
 
@@ -13,8 +13,8 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/create">Create</Link>
       </div>
-    </nav>
+    </nav> 
   );
 }
  
-export default Navbar;
+export default NavigationBar;

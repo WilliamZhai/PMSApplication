@@ -1,10 +1,11 @@
-import './LoadingMessage.css'
+import './AlertStyles.css'
+import { Alert } from "react-bootstrap";
 
 const LoadingMessage = ({message}) => {
-  return (  
-    <div className='loading-message-container'>
-      <h3 className="loading-message-text"> {message} </h3> 
-    </div>
+  return ( 
+    <Alert variant="info" className='error-message-text'>
+      Info: {message}
+    </Alert>
   );
 }
  

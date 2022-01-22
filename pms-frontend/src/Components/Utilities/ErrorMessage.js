@@ -1,11 +1,11 @@
-import './ErrorMessage.css'
+import './AlertStyles.css'
+import { Alert } from "react-bootstrap";
 
 const ErrorMessage = ({error}) => {
-  console.log(error)
   return (  
-    <div className='error-message-container'>
-      <h3 className="error-message-text"> Error: {error.message} </h3> 
-    </div>
+    <Alert variant="danger" className='error-message-text'>
+      Error: {error}
+    </Alert>  
   );
 }
  

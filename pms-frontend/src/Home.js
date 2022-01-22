@@ -36,9 +36,10 @@ const Home = () => {
     <div className="home">
       <div>Date: {date}</div>
       <h2>{title}</h2>
+      
 
       { isPending && <LoadingMessage message="Loading..."/> }
-      { error && <ErrorMessage error={error}/>}
+      { error && <ErrorMessage error={error.message}/>}
 
       <button onClick={handleClick}>Create</button>
 
