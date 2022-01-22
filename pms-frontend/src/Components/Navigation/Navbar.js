@@ -12,6 +12,8 @@ const NavigationBar = () => {
       <div className="links">
         <Link to="/">Home</Link>
         <Link to="/create">Create</Link>
+        <Link to="/account">My Account</Link>
+        <Link to="/administration">Administration</Link>
       </div>
     </nav> 
   );

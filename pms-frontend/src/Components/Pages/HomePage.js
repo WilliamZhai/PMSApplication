@@ -8,7 +8,7 @@ import useFetch from "../../useFetch";
 import './Pages.css';
 
 
-const Home = () => {
+const HomePage = () => {
   const navigate = useNavigate();
   const title = "Home Page"
   const {data:teachers, isPending, error} = useFetch("http://localhost:5000/api/employees");
@@ -41,5 +41,5 @@ const Home = () => {
   );
 }
  
-export default Home;
+export default HomePage;
 

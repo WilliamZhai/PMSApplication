@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-const Create = () => {
+const CreatePage = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -64,4 +64,4 @@ const Create = () => {
   );
 }
  
-export default Create;
+export default CreatePage;
