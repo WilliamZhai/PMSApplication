@@ -1,0 +1,11 @@
+.error-message-container {
+  border: solid red;
+  border-width: 2px;
+  max-width: 400px;
+  margin: auto;
+  padding: 8px;
+}
+
+.error-message-text {
+  text-align: left;
+}

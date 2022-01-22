@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import ErrorMessage from "./Components/Utilities/ErrorMessage";
 import TeacherList from "./TeacherList";
 import useFetch from "./useFetch";
 
@@ -39,7 +40,7 @@ const Home = () => {
       <button onClick={handleClick}>Create</button>
 
       { isPending && <h2>Loading...</h2>}
-      { error && <h2>Error: {error}</h2>}
+      { error && <ErrorMessage error={error}></ErrorMessage>}
 
       {teachers && <TeacherList teachers={teachers} title="Teachers" handleDelete={handleDeleteTeacher}></TeacherList>}
       {/* <TeacherList teachers={teachers.filter((teacher) => teacher.name === 'Jason')} title="Jason" handleDelete={handleDeleteTeacher}></TeacherList> */}
