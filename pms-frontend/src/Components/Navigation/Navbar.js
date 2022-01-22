@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import './Navigation.css';
 
 const NavigationBar = () => {
   const navbarTitle = "PMS Portal"
@@ -10,10 +11,22 @@ const NavigationBar = () => {
     }}>
       <h1>{navbarTitle}</h1>
       <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/create">Create</Link>
-        <Link to="/account">My Account</Link>
-        <Link to="/administration">Administration</Link>
+        <NavLink  
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
+          to="/">Home 
+        </NavLink>
+        <NavLink  
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
+          to="/create">Create 
+        </NavLink>
+        <NavLink  
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
+          to="/account">My Account 
+        </NavLink>
+        <NavLink  
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
+          to="/administration">Administration 
+        </NavLink>
       </div>
     </nav> 
   );
