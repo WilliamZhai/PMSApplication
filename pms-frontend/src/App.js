@@ -1,11 +1,12 @@
 import './App.css';
-import NavigationBar from './Components/Navigation/Navbar';
 import { BrowserRouter , Routes, Route} from 'react-router-dom';
-import Home from './Home';
-import Create from './Create';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import NavigationBar from './Components/Navigation/Navbar';
+import Home from './Components/Pages/Home';
+import Create from './Components/Pages/Create';
 import TeacherDetails from './TeacherDetails';
 import NotFound from './NotFound';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
