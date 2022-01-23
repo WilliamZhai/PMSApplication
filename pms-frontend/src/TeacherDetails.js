@@ -2,8 +2,10 @@ import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const TeacherDetails = () => {
+
+  const {REACT_APP_SERVER_URL} = process.env;
   const { id } = useParams();
-  const url = 'http://localhost:5000/api/employees/' + id;
+  const url = REACT_APP_SERVER_URL + id;
   const { data:teacher, isPending, error} = useFetch(url);
 
   return (  
