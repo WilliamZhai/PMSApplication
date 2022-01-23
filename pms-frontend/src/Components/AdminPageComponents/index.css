@@ -1,0 +1,14 @@
+.teachers-container{
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  border-bottom: none;
+}
+
+.section-title{
+  text-align: left;
+  color: black;
+  border-bottom: dashed 2px rgb(189, 176, 176);
+  padding-bottom: 10px;
+}
