@@ -17,15 +17,15 @@ const NavigationBar = () => {
         </NavLink>
         <NavLink  
           className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
-          to="/create">Create 
-        </NavLink>
-        <NavLink  
-          className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
           to="/account">My Account 
         </NavLink>
         <NavLink  
           className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
           to="/administration">Administration 
+        </NavLink>
+        <NavLink  
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')} 
+          to="/create">Create 
         </NavLink>
       </div>
     </nav> 
