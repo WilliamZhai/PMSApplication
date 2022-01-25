@@ -2,12 +2,14 @@ import './App.css';
 import { BrowserRouter , Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+import HomePage from './Pages/HomePage';
+import CreatePage from './Pages/CreatePage';
+import AdministrationPage from './Pages/AdministrationPage';
+import NotFoundPage from './Pages/NotFoundPage';
+
 import NavigationBar from './Components/Navigation/Navbar';
-import HomePage from './Components/Pages/HomePage';
-import CreatePage from './Components/Pages/CreatePage';
 import TeacherDetails from './TeacherDetails';
-import AdministrationPage from './Components/Pages/AdministrationPage';
-import NotFound from './NotFound';
 
 function App() {
 
@@ -23,7 +25,7 @@ function App() {
               <Route path=":id" element={<TeacherDetails/>}/>
             </Route>
             <Route path="/administration" element={<AdministrationPage/>}/>
-            <Route path="*" element={<NotFound/>}/> 
+            <Route path="*" element={<NotFoundPage/>}/> 
           </Routes>
         </div>
       </div>

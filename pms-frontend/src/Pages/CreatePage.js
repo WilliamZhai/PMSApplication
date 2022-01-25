@@ -1,4 +1,4 @@
-import CreateTeacher from "../CreatePageComponents/CreateTeacher";
+import CreateTeacher from "../Components/CreatePageComponents/CreateTeacher";
 import { Tabs,Tab } from "react-bootstrap";
 import { useState } from "react";
 

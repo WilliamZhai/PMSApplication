@@ -1,7 +1,8 @@
-import TeachersContainer from "../AdminPageComponents/TeachersContainer";
-import useFetch from "../../api/useFetch";
-import LoadingMessage from "../Utilities/LoadingMessage";
-import ErrorMessage from "../Utilities/ErrorMessage";
+import TeachersContainer from "../Components/AdminPageComponents/TeachersContainer";
+import LoadingMessage from "../Components/Utilities/LoadingMessage";
+import ErrorMessage from "../Components/Utilities/ErrorMessage";
+
+import useFetch from "../api/useFetch";
 
 const AdministrationPage = () => {
   const {REACT_APP_SERVER_URL} = process.env;
