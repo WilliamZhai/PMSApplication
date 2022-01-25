@@ -1,0 +1,26 @@
+.create-teacher {
+  max-width: 50%;
+  margin: 40px auto;
+}
+
+.create-teacher label {
+  text-align: left;
+  display: block;
+}
+
+.create-teacher input, .create-teacher textarea, .create-teacher select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create-teacher button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}

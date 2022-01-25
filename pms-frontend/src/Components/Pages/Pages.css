@@ -1,4 +1,4 @@
-.home, .create{
+.home, .create, .administration{
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -11,28 +11,11 @@ h2 {
   margin-bottom: 30px;
 }
 
-.create {
-  max-width: 400px;
+.tabs-container {
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
-.create label {
-  text-align: left;
-  display: block;
-}
-
-.create input, .create textarea, .create select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-.create button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+.tab {
+  width: 200px;
 }

@@ -8,11 +8,10 @@ const AdministrationPage = () => {
   const {data:teachers, isPending, error} = useFetch(REACT_APP_SERVER_URL);
 
   return (  
-    <div>
+    <div className="administration">
       { isPending && <LoadingMessage message="Loading..."/> }
       { error && <ErrorMessage error={error.message}/>}
       { teachers && <TeachersContainer teachers={teachers}/>}
-      
     </div>
   );
 }
