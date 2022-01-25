@@ -28,10 +28,11 @@ const HomePage = () => {
 
   return (  
     <div className="home">
-      <h2>{title}</h2>
-      
       { isPending && <LoadingMessage message="Loading..."/> }
       { error && <ErrorMessage error={error.message}/>}
+      <h2>{title}</h2>
+      
+      
 
       {teachers && <TeacherList teachers={teachers} title="Teachers" handleDelete={handleDeleteTeacher}></TeacherList>}
       {/* <TeacherList teachers={teachers.filter((teacher) => teacher.name === 'Jason')} title="Jason" handleDelete={handleDeleteTeacher}></TeacherList> */}

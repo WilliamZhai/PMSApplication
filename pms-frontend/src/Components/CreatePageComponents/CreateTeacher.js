@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import ErrorMessage from "../Utilities/ErrorMessage";
+import LoadingMessage from "../Utilities/LoadingMessage";
 
 import './index.css'
 
@@ -14,8 +16,6 @@ const CreateTeacher = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-
 
     const newTeacher = {name, email, classes}
 
@@ -33,35 +33,40 @@ const CreateTeacher = () => {
   }
 
   return (  
-    <div className="create-teacher">
-      <h2>Add a New Teacher</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input 
-          type="text"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label>Description</label>
-        <textarea 
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></textarea>
-        <label>classes</label>
-        <select
-          value={classes}
-          onChange={(e) => setClass(e.target.value)}
-        >
-          <option value=""> </option>
-          <option value="G4"> G4</option>
-          <option value="G5"> G5</option>
-          <option value="G6"> G6</option>
-        </select>
-        { !isPending && <button>Add Teacher</button>}
-        { isPending && <button disabled> Adding Teacher</button>}
-      </form>
+    <div>
+      { isPending && <LoadingMessage message="Loading..."/> }
+      { error && <ErrorMessage error={error.message}/>}
+      <div className="create-teacher">
+        <h2>Add a New Teacher</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input 
+            type="text"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label>Description</label>
+          <textarea 
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></textarea>
+          <label>classes</label>
+          <select
+            value={classes}
+            onChange={(e) => setClass(e.target.value)}
+          >
+            <option value=""> </option>
+            <option value="G4"> G4</option>
+            <option value="G5"> G5</option>
+            <option value="G6"> G6</option>
+          </select>
+          { !isPending && <button>Add Teacher</button>}
+          { isPending && <button disabled> Adding Teacher</button>}
+          
+        </form>
+      </div>
     </div>
   );
 }

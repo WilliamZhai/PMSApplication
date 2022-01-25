@@ -27,7 +27,10 @@ const CreatePage = () => {
       </Tabs>
     </div>
     
+    {/* Display form based on selected tab */}
     {key==="teacher" && <CreateTeacher></CreateTeacher>}
+
+
   </div> 
   );
 }
