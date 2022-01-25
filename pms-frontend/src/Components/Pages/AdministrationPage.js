@@ -1,5 +1,5 @@
 import TeachersContainer from "../AdminPageComponents/TeachersContainer";
-import useFetch from "../../useFetch";
+import useFetch from "../../api/useFetch";
 import LoadingMessage from "../Utilities/LoadingMessage";
 import ErrorMessage from "../Utilities/ErrorMessage";
 

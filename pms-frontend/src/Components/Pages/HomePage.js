@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import ErrorMessage from "../Utilities/ErrorMessage";
 import LoadingMessage from "../Utilities/LoadingMessage";
 import TeacherList from "../../TeacherList";
-import useFetch from "../../useFetch";
+import useFetch from "../../api/useFetch";
 
 import './Pages.css';
 
