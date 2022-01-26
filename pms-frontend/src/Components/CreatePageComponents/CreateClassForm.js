@@ -5,7 +5,7 @@ import LoadingMessage from "../Utilities/LoadingMessage";
 
 import './index.css'
 
-const CreateTeacher = () => {
+const CreateClassForm = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -71,4 +71,4 @@ const CreateTeacher = () => {
   );
 }
  
-export default CreateTeacher;
+export default CreateClassForm;

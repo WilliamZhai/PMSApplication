@@ -1,8 +1,9 @@
-import CreateTeacher from "../Components/CreatePageComponents/CreateTeacher";
+import CreateTeacherForm from "../Components/CreatePageComponents/CreateTeacherForm";
 import { Tabs,Tab } from "react-bootstrap";
 import { useState } from "react";
 
 import './Pages.css'
+import CreateClassForm from "../Components/CreatePageComponents/CreateClassForm";
 
 const CreatePage = () => {
   const [key, setKey] = useState('teacher');
@@ -28,7 +29,8 @@ const CreatePage = () => {
     </div>
     
     {/* Display form based on selected tab */}
-    {key==="teacher" && <CreateTeacher></CreateTeacher>}
+    {key==="teacher" && <CreateTeacherForm></CreateTeacherForm>}
+    {key==="class" && <CreateClassForm></CreateClassForm>}
 
 
   </div> 
