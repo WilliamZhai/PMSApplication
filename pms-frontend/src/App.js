@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter , Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import HomePage from './Pages/HomePage';
 import CreatePage from './Pages/CreatePage';
 import AdministrationPage from './Pages/AdministrationPage';
