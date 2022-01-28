@@ -1,18 +1,24 @@
 import TeachersContainer from "../Components/AdminPageComponents/TeachersContainer";
+import CoursesContainer from "../Components/AdminPageComponents/CoursesContainer";
+
 import LoadingMessage from "../Components/Utilities/LoadingMessage";
 import ErrorMessage from "../Components/Utilities/ErrorMessage";
 
 import useFetch from "../api/useFetch";
 
 const AdministrationPage = () => {
-  const {REACT_APP_SERVER_URL} = process.env;
-  const {data:teachers, isPending, error} = useFetch(REACT_APP_SERVER_URL);
+  const {data:teachers, isPending, error} = useFetch("employees");
+  const {data:courses, isPending:isPending2, error:error2} = useFetch("courses");
 
   return (  
     <div className="administration">
       { isPending && <LoadingMessage message="Loading..."/> }
       { error && <ErrorMessage error={error.message}/>}
       { teachers && <TeachersContainer teachers={teachers}/>}
+
+      { isPending2 && <LoadingMessage message="Loading..."/> }
+      { error2 && <ErrorMessage error={error2.message}/>}
+      { courses && <CoursesContainer courses={courses}/>}
     </div>
   );
 }

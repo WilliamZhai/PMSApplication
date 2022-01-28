@@ -4,7 +4,7 @@ import TeachersTable from './TeachersTable.js'
 const TeachersContainer = ({teachers}) => {
 
   return ( 
-  <div className="teachers-container">
+  <div className="section-container">
     <h2 className="section-title"> Teachers</h2>
     <TeachersTable teachers={teachers}></TeachersTable>
 

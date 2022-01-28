@@ -10,8 +10,7 @@ import './Pages.css';
 const HomePage = () => {
   const navigate = useNavigate();
   const title = "Home Page"
-  const {data:teachers, isPending, error} = useFetch("http://localhost:5000/api/employees");
-
+  const {data:teachers, isPending, error} = useFetch("employees");
 
   const handleDeleteTeacher = (id) => {
     fetch('http://localhost:5000/api/employees/' + id, {

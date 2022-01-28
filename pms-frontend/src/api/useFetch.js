@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+const {REACT_APP_SERVER_API_BASE_URL} = process.env;
+
+const useFetch = (resource_url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const abortCont = new AbortController();
+    const url = REACT_APP_SERVER_API_BASE_URL + resource_url
 
     fetch(url, {method: 'GET', signal: abortCont.signal})
       .then(res => {
@@ -32,7 +35,7 @@ const useFetch = (url) => {
     return () => {
       abortCont.abort();
     }
-  }, [url]);
+  }, [resource_url]);
 
   return {data, isPending, error};
 }
