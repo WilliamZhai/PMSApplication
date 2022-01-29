@@ -29,7 +29,7 @@ const CreateTeacherForm = () => {
     }
 
     executePost(options).then(response => {
-      console.log("RESPONSE: ", response)
+      // console.log("RESPONSE: ", response)
     })
 
     setTeacherAddedName(name);
@@ -74,7 +74,6 @@ const CreateTeacherForm = () => {
           
         </form>
       </div>
-
     </div>
   );
 }
