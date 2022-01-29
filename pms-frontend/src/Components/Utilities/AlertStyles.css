@@ -1,4 +1,4 @@
-.error-message-text {
+.error-message-text, .info-message-text {
   text-align: left;
   max-width: 800px;
   margin: 20px auto;

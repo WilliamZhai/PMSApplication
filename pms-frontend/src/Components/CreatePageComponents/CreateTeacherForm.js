@@ -1,7 +1,8 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import ErrorMessage from "../Utilities/ErrorMessage";
 import LoadingMessage from "../Utilities/LoadingMessage";
+import InfoMessage from "../Utilities/InfoMessage";
 
 import usePost from "../../api/usePost";
 
@@ -12,8 +13,9 @@ const CreateTeacherForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [classes, setClass] = useState('');
+  const [teacherAddedName, setTeacherAddedName] = useState('')
   
-  const {executePost, data, isPending, error } = usePost("employees");
+  const {executePost, data, isPending, error, success } = usePost("employees");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,12 +31,18 @@ const CreateTeacherForm = () => {
     executePost(options).then(response => {
       console.log("RESPONSE: ", response)
     })
+
+    setTeacherAddedName(name);
+    setName('');
+    setEmail('');
+    setClass('');
   }
 
   return (  
     <div>
       { isPending && <LoadingMessage message="Loading..."/> }
       { error && <ErrorMessage error={error.message}/>}
+      { success && <InfoMessage message={"Teacher added - " + teacherAddedName }></InfoMessage>}
       <div className="create-teacher">
         <h2>Add a New Teacher</h2>
         <form onSubmit={handleSubmit}>
