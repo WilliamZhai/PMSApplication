@@ -1,6 +1,11 @@
-import {Table} from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
+import { FaTrashAlt } from 'react-icons/fa'
 
 const TeachersTable = ({teachers}) => {
+
+  const handleDelete = (id) => {
+    console.log("delete: " + id);
+  }
 
   return ( 
     <div className="teachers-table">
@@ -10,6 +15,7 @@ const TeachersTable = ({teachers}) => {
             <th>id</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +24,11 @@ const TeachersTable = ({teachers}) => {
               <td>{teacher.id}</td>
               <td>{teacher.name}</td>
               <td>{teacher.email}</td>
+              <td>
+                <FaTrashAlt 
+                  onClick={() => handleDelete(teacher.id)}
+                />
+              </td>
             </tr>
           ))}
         </tbody>

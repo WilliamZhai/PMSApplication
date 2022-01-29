@@ -53,12 +53,12 @@ const CreateTeacherForm = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label>Description</label>
-          <textarea 
+          <label>Email</label>
+          <input 
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          ></textarea>
+          ></input>
           <label>classes</label>
           <select
             value={classes}
