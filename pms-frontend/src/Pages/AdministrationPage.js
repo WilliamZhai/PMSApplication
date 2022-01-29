@@ -6,9 +6,10 @@ import ErrorMessage from "../Components/Utilities/ErrorMessage";
 
 import useFetch from "../api/useFetch";
 
+
 const AdministrationPage = () => {
-  const {data:teachers, isPending, error} = useFetch("employees");
-  const {data:courses, isPending:isPending2, error:error2} = useFetch("courses");
+  const {data:teachers, isPending, error} = useFetch("employees", 'GET');
+  const {data:courses, isPending:isPending2, error:error2} = useFetch("courses", 'GET');
 
   return (  
     <div className="administration">

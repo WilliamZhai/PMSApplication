@@ -17,8 +17,6 @@ const CreatePage = () => {
         onSelect={(k) => setKey(k)}
         className="tabs-container"
       >
-        <Tab className="tab" eventKey="create" title="create" disabled>
-        </Tab>
         <Tab className="tab" eventKey="teacher" title="teacher">
         </Tab>
         <Tab className="tab" eventKey="class" title="class">

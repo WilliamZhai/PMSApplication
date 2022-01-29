@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom"
 import ErrorMessage from "../Utilities/ErrorMessage";
 import LoadingMessage from "../Utilities/LoadingMessage";
+
+import usePost from "../../api/usePost";
 
 import './index.css'
 
@@ -10,26 +12,23 @@ const CreateTeacherForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [classes, setClass] = useState('');
-  const [isPending, setIsPending] = useState(false);
-  const [error, setError] = useState(null);
-  let navigate = useNavigate();
+  
+  const {executePost, data, isPending, error } = usePost("employees");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newTeacher = {name, email, classes}
 
-    setIsPending(true);
-    
-    fetch('http://localhost:5000/api/employees', {
+    const options = {
       method: 'POST',
-      headers: { "Content-Type": "application/json"},
-      body: JSON.stringify(newTeacher)
-    }).then(() =>{
-      console.log("new teacher added")
-      setIsPending(false)
-      navigate('/')
-    }) 
+      body: JSON.stringify(newTeacher),
+      headers: { "Content-Type": "application/json"}
+    }
+
+    executePost(options).then(response => {
+      console.log("RESPONSE: ", response)
+    })
   }
 
   return (  
@@ -67,6 +66,7 @@ const CreateTeacherForm = () => {
           
         </form>
       </div>
+
     </div>
   );
 }
