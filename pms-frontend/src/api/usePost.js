@@ -14,6 +14,7 @@ const usePost = (resource_url) => {
       setIsPending(true);
       setError(null);
       setSuccess(false);
+      console.log(options)
       return await fetch(url, options)
         .then(response => {
           return response

@@ -5,26 +5,28 @@ import LoadingMessage from "../Utilities/LoadingMessage";
 import InfoMessage from "../Utilities/InfoMessage";
 
 import usePost from "../../api/usePost";
+import useFetch from "../../api/useFetch";
 
 import './index.css'
 
 const CreateTeacherForm = () => {
 
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [classes, setClass] = useState('');
-  const [teacherAddedName, setTeacherAddedName] = useState('')
+  const [description, setDescription] = useState('');
+  const [teacher, setTeacher] = useState('');
+  const [courseAddedName, setCourseAddedName] = useState('')
   
-  const {executePost, data, isPending, error, success } = usePost("employees");
+  const {executePost, data, isPending, error, success } = usePost("courses");
+  const {data:teachers} = useFetch("employees", 'GET');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newTeacher = {name, email, classes}
+    const newCourse = {name, description, teacher}
 
     const options = {
       method: 'POST',
-      body: JSON.stringify(newTeacher),
+      body: JSON.stringify(newCourse),
       headers: { "Content-Type": "application/json"}
     }
 
@@ -32,43 +34,43 @@ const CreateTeacherForm = () => {
       // console.log("RESPONSE: ", response)
     })
 
-    setTeacherAddedName(name);
+    setCourseAddedName(name);
     setName('');
-    setEmail('');
-    setClass('');
+    setDescription('');
+    setTeacher('');
   }
 
   return (  
     <div>
       { isPending && <LoadingMessage message="Loading..."/> }
       { error && <ErrorMessage error={error.message}/>}
-      { success && <InfoMessage message={"Teacher added - " + teacherAddedName }></InfoMessage>}
-      
+      { success && <InfoMessage message={"Course added - " + courseAddedName }></InfoMessage>}
+
       <div className="create-teacher">
-        <h2>Add a New Teacher</h2>
+        <h2>Add a New Course</h2>
         <form onSubmit={handleSubmit}>
-          <label>Name</label>
+          <label>Course Name</label>
           <input 
             type="text"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label>Email</label>
-          <input 
+          <label>Description</label>
+          <textarea  
             required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-          <label>classes</label>
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea >
+          <label>Teacher</label>
           <select
-            value={classes}
-            onChange={(e) => setClass(e.target.value)}
+            value={teacher}
+            onChange={(e) => setTeacher(e.target.value)}
           >
-            <option value=""> </option>
-            <option value="G4"> G4</option>
-            <option value="G5"> G5</option>
-            <option value="G6"> G6</option>
+            <option> </option>
+            {teachers && teachers.map((teacher) => (
+              <option value={teacher} key={teacher.id}> {teacher.name} </option>
+            ))}
           </select>
           { !isPending && <button>Add Teacher</button>}
           { isPending && <button disabled> Adding Teacher</button>}
